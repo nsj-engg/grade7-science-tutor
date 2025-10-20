@@ -110,16 +110,3 @@ if user_input:
     # 4) Save to local chat history
     st.session_state.messages.append({"role": "assistant", "content": final_text})
 
-# ---------- Sidebar: info ----------
-with st.sidebar:
-    st.subheader("Configuration")
-    st.write("**Assistant ID**")
-    st.code(ASSISTANT_ID)
-    st.write("**Thread ID**")
-    st.code(st.session_state.thread_id)
-    st.markdown("""
-**Tips**
-- Your Assistant already has **File Search** enabled, so it will use the vector store you attached in the dashboard.
-- To let it do math/plots, enable **Code Interpreter** on the dashboard.
-- To call your own APIs (simulations, LMS, etc.), add **Functions** on the dashboard and handle `requires_action` in `app.py`.
-    """)
